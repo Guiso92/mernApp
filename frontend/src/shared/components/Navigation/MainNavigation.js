@@ -28,7 +28,7 @@ function MainNavigation(props) {
       </SideDrawer>
       <MainHeader>
         <h1 className="main-navigation__title">
-          <Link to="/">La Nueva</Link>
+          <Link to="/">My app</Link>
         </h1>
         <button
           className="main-navigation__menu-btn"
