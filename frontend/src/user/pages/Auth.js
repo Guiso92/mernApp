@@ -16,7 +16,7 @@ import { useHttpClient } from "../../shared/hooks/http-hook";
 import { AuthContext } from "../../shared/context/auth-context";
 import "./Auth.scss";
 
-function Auth() {
+const Auth = () => {
   const auth = useContext(AuthContext);
   const [isLoginMode, setIsLoginMode] = useState(true);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -35,7 +35,7 @@ function Auth() {
     false
   );
 
-  function switchModeHandler() {
+  const switchModeHandler = () => {
     if (!isLoginMode) {
       setFormData(
         {

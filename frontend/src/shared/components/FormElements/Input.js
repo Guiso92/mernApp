@@ -4,7 +4,7 @@ import "./Input.scss";
 
 import { validate } from "../../util/Validators";
 
-function inputReducer(state, action) {
+const inputReducer = (state, action) => {
   switch (action.type) {
     case "CHANGE":
       return {
@@ -22,7 +22,7 @@ function inputReducer(state, action) {
   }
 }
 
-function Input(props) {
+const Input = (props) => {
   const [inputState, dispatch] = useReducer(inputReducer, {
     value: props.initialValue || "",
     isTouched: false,
@@ -36,7 +36,7 @@ function Input(props) {
     onInput(id, value, isValid);
   }, [id, value, isValid, onInput]);
 
-  function changeHandler(event) {
+  const changeHandler = (event) => {
     dispatch({
       type: "CHANGE",
       val: event.target.value,
@@ -44,7 +44,7 @@ function Input(props) {
     });
   }
 
-  function touchHandler(event) {
+  const touchHandler = (event) => {
     dispatch({ type: "TOUCH" });
   }
 

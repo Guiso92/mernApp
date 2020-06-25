@@ -8,7 +8,7 @@ import Backdrop from "../UIElements/Backdrop";
 
 import "./MainNavigation.scss";
 
-function MainNavigation(props) {
+const MainNavigation = (props) => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
   const openDrawerHandler = () => {
     setDrawerIsOpen(true);

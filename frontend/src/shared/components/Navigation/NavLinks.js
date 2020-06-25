@@ -7,20 +7,20 @@ import Button from "../FormElements/Button";
 
 import "./NavLinks.scss";
 
-function NavLinks(props) {
+const NavLinks = (props) => {
   const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   const auth = useContext(AuthContext);
 
-  function showLogoutModalHandler() {
+  const showLogoutModalHandler = () => {
     setShowLogoutModal(true);
   }
 
-  function cancelLogoutHandler() {
+  const cancelLogoutHandler = () => {
     setShowLogoutModal(false);
   }
 
-  function confirmLogoutHandler() {
+  const confirmLogoutHandler = () => {
     setShowLogoutModal(false);
     auth.logout();
   }

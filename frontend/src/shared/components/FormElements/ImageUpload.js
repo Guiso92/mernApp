@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Button from "./Button";
 import "./ImageUpload.scss";
 
-function ImageUpload(props) {
+const ImageUpload = (props) => {
   const [file, setFile] = useState();
   const [previewUrl, setPreviewUrl] = useState();
   const [isValid, setIsValid] = useState(false);
@@ -20,7 +20,7 @@ function ImageUpload(props) {
     fileReader.readAsDataURL(file);
   }, [file]);
 
-  function pickedHandler(event) {
+  const pickedHandler = (event) => {
     let pickedFile;
     let fileIsValid = isValid;
     if (event.target.files || event.target.files.length === 1) {
@@ -35,7 +35,7 @@ function ImageUpload(props) {
     props.onInput(props.id, pickedFile, fileIsValid);
   }
 
-  function pickImageHandler() {
+  const pickImageHandler = () => {
     filePickerRef.current.click();
   }
 
